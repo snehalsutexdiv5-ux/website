@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartServe Solutions</title>
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<!-- ===== HEADER START ===== -->
+<header class="bg-blue-100 text-gray-700 body-font shadow-md">
+  <div class="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
+
+    <!-- Logo + Name -->
+    <a class="flex title-font font-bold items-center text-blue-900">
+      <div class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-400 text-white">
+        S
+      </div>
+      <span class="ml-3 text-xl">SmartServe Solutions</span>
+    </a>
+
+    <!-- Navbar Links + Button -->
+    <div class="flex items-center">
+      <nav class="flex items-center text-base mr-6 space-x-4">
+        <a class="hover:text-blue-700 font-medium transition-colors duration-200">Home</a>
+        <a class="hover:text-blue-700 font-medium transition-colors duration-200">Request Service</a>
+        <a class="hover:text-blue-700 font-medium transition-colors duration-200">payment</a>
+        <a class="hover:text-blue-700 font-medium transition-colors duration-200">contact us</a>
+      </nav>
+
+      <button class="inline-flex items-center bg-blue-400 border-0 py-2 px-4 hover:bg-blue-500 rounded text-base text-white font-semibold transition-colors duration-200">
+        Login
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="text-center mb-12">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Our Services</h1>
+      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500">
+        Choose from a wide range of expert services to meet your IT needs. We offer efficient solutions with transparent pricing.
+      </p>
+      <div class="flex mt-6 justify-center">
+        <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap -m-4">
+      <!-- Service 1 -->
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a class="block relative h-48 rounded overflow-hidden">
+          <img alt="Software Installation" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260/4f46e5/fff&text=Software+Installation">
+        </a>
+        <div class="mt-4">
+          <h3 class="text-indigo-500 text-xs tracking-widest title-font mb-1">Installation</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">Software Installation</h2>
+          <p class="mt-1 text-gray-700">$50.00</p>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a class="block relative h-48 rounded overflow-hidden">
+          <img alt="Maintenance" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261/4f46e5/fff&text=Maintenance">
+        </a>
+        <div class="mt-4">
+          <h3 class="text-indigo-500 text-xs tracking-widest title-font mb-1">Support</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">System Maintenance</h2>
+          <p class="mt-1 text-gray-700">$80.00</p>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a class="block relative h-48 rounded overflow-hidden">
+          <img alt="Consultation" class="object-cover object-center w-full h-full block" src="ai.jpg">
+        </a>
+        <div class="mt-4">
+          <h3 class="text-indigo-500 text-xs tracking-widest title-font mb-1">Consulting</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">IT Consultation</h2>
+          <p class="mt-1 text-gray-700">$100.00</p>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a class="block relative h-48 rounded overflow-hidden">
+          <img alt="Custom Development" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263/4f46e5/fff&text=Custom+Dev">
+        </a>
+        <div class="mt-4">
+          <h3 class="text-indigo-500 text-xs tracking-widest title-font mb-1">Development</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">Custom Software Development</h2>
+          <p class="mt-1 text-gray-700">$200.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Form -->
+    <div class="mt-20 max-w-lg mx-auto bg-white p-8 rounded shadow-md">
+      <h2 class="text-gray-900 text-xl font-medium mb-6 text-center">Make a Payment</h2>
+      <form id="paymentForm" class="space-y-4">
+        <div>
+          <label for="serviceSelect" class="block text-gray-700 font-semibold mb-2">Select Service</label>
+          <select id="serviceSelect" name="service" class="w-full border border-gray-300 rounded px-3 py-2" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="Software Installation" data-price="50">Software Installation - $50.00</option>
+            <option value="System Maintenance" data-price="80">System Maintenance - $80.00</option>
+            <option value="IT Consultation" data-price="100">IT Consultation - $100.00</option>
+            <option value="Custom Software Development" data-price="200">Custom Software Development - $200.00</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="customerName" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+          <input type="text" id="customerName" name="customerName" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="John Doe" required>
+        </div>
+
+        <div>
+          <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+          <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="john@example.com" required>
+        </div>
+
+        <div>
+          <label for="amount" class="block text-gray-700 font-semibold mb-2">Amount ($)</label>
+          <input type="text" id="amount" name="amount" class="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100" readonly>
+        </div>
+
+        <button type="submit" class="w-full bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600">Pay Now</button>
+      </form>
+
+      <p id="paymentMessage" class="mt-4 text-center text-green-600 hidden"></p>
+    </div>
+  </div>
+
+  <script>
+    // Update amount when service changes
+    const serviceSelect = document.getElementById('serviceSelect');
+    const amountInput = document.getElementById('amount');
+    const paymentMessage = document.getElementById('paymentMessage');
+    const paymentForm = document.getElementById('paymentForm');
+
+    serviceSelect.addEventListener('change', () => {
+      const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+      amountInput.value = selectedOption.getAttribute('data-price') || '';
+      paymentMessage.classList.add('hidden');
+    });
+
+    paymentForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const service = serviceSelect.value;
+      const name = document.getElementById('customerName').value;
+      const email = document.getElementById('email').value;
+      const amount = amountInput.value;
+
+      if (!service || !name || !email || !amount) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Simulate payment processing
+      paymentMessage.textContent = `Thank you, ${name}! Your payment of $${amount} for "${service}" has been received.`;
+      paymentMessage.classList.remove('hidden');
+
+      // Reset form (optional)
+      paymentForm.reset();
+      amountInput.value = '';
+    });
+  </script>
+</section>
