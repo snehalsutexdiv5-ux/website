@@ -20,28 +20,67 @@
       <span class="ml-3 text-xl">SmartServe Solutions</span>
     </a>
 
-    <!-- Navbar Links + Button -->
-    <div class="flex items-center">
-      <nav class="flex items-center text-base mr-6 space-x-4">
-        <a class="hover:text-blue-700 font-medium transition-colors duration-200">Home</a>
-        <a class="hover:text-blue-700 font-medium transition-colors duration-200">Request Service</a>
-        <a class="hover:text-blue-700 font-medium transition-colors duration-200">Track Service</a>
-        <a class="hover:text-blue-700 font-medium transition-colors duration-200">Payments</a>
-      </nav>
+     <div class="flex items-center">
+  <nav class="flex items-center text-base mr-6 space-x-4">
+    <a href="home.html" class="hover:text-blue-700 font-medium transition-colors duration-200">Home</a>
+    <a href="request service.html" class="hover:text-blue-700 font-medium transition-colors duration-200">Request Service</a>
+    <a href="track.html" class="hover:text-blue-700 font-medium transition-colors duration-200">Payment</a>
+    <a href="con.html" class="hover:text-blue-700 font-medium transition-colors duration-200">Contact Us</a>
+  </nav>
+</div>
 
-      <button class="inline-flex items-center bg-blue-400 border-0 py-2 px-4 hover:bg-blue-500 rounded text-base text-white font-semibold transition-colors duration-200">
+
+<!-- Login Button -->
+      <button id="headerLoginBtn" style="display: flex; align-items: center; background-color: #3b82f6; border: none; padding: 8px 15px; color: white; border-radius: 5px; cursor: pointer; font-weight: 600;">
         Login
-        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
       </button>
     </div>
   </div>
 </header>
-
-  </div>
-</header>
 <!-- ===== HEADER END ===== -->
+
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" style="position: fixed; inset: 0; background-color: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; font-family: Arial, sans-serif; z-index: 1000;">
+  <div style="background: #f9f9f9; padding: 30px 25px; border-radius: 10px; width: 360px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-align:center;">
+    <h2 style="margin-bottom: 20px; color: #333;">Login to SmartServe</h2>
+    
+    <label>Username</label><br>
+    <input type="text" id="username" placeholder="Enter username" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;"><br>
+
+    <label>Password</label><br>
+    <input type="password" id="password" placeholder="Enter password" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
+
+    <button id="submitLogin" style="padding: 10px 25px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Login</button>
+
+    <p style="color: #888; font-size: 12px; margin-top: 15px;">Use username: admin, password: 1234</p>
+  </div>
+</div>
+
+<script>
+  const loginModal = document.getElementById('loginModal');
+  const headerLoginBtn = document.getElementById('headerLoginBtn');
+  const submitLogin = document.getElementById('submitLogin');
+  const homeContent = document.getElementById('homeContent');
+
+  // Click header login button to open modal
+  headerLoginBtn.addEventListener('click', () => {
+    loginModal.style.display = 'flex';
+  });
+
+  // Handle login inside modal
+  submitLogin.addEventListener('click', () => {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if(username === 'admin' && password === '1234') {
+      loginModal.style.display = 'none';  // Hide login modal
+      homeContent.style.display = 'block'; // Show home content
+    } else {
+      alert('Invalid username or password!');
+    }
+  });
+</script>
 
 <!-- Your Section -->
 <section
@@ -53,7 +92,7 @@
       <h1 class="flex-grow sm:pr-16 text-4xl font-bold title-font text-white">
         Online Service Management System for Faster & Smarter Service Handling
       </h1>
-      <a href="request-service.html">
+      <a href="request service.html">
       <button
         class="flex-shrink-0 text-white bg-indigo-500 border-0 py-3 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0"
       >
@@ -84,7 +123,7 @@
       <!-- Card 1 -->
       <div class="p-4 lg:w-1/3">
         <div class="h-full bg-white px-8 pt-6 pb-16 rounded-lg shadow text-center relative">
-          <img class="w-full h-40 object-cover rounded-lg mb-4" src="ai.jpg" alt="Request Service">
+          <img class="w-full h-40 object-cover rounded-lg mb-4" src="ser.jpeg" alt="Request Service">
           <h2 class="tracking-widest text-xs font-medium text-indigo-500 mb-1">
             CUSTOMER
           </h2>
@@ -108,7 +147,7 @@
       <!-- Card 2 -->
       <div class="p-4 lg:w-1/3">
         <div class="h-full bg-white px-8 pt-6 pb-16 rounded-lg shadow text-center relative">
-          <img class="w-full h-40 object-cover rounded-lg mb-4" src="ai.jpg" alt="Track Service">
+          <img class="w-full h-40 object-cover rounded-lg mb-4" src="tr.jpg" alt="Track Service">
           <h2 class="tracking-widest text-xs font-medium text-indigo-500 mb-1">
             TRACKING
           </h2>
@@ -132,7 +171,7 @@
       <!-- Card 3 -->
       <div class="p-4 lg:w-1/3">
         <div class="h-full bg-white px-8 pt-6 pb-16 rounded-lg shadow text-center relative">
-          <img class="w-full h-40 object-cover rounded-lg mb-4" src="ai.jpg" alt="Payments">
+          <img class="w-full h-40 object-cover rounded-lg mb-4" src="py.jpg" alt="Payments">
           <h2 class="tracking-widest text-xs font-medium text-indigo-500 mb-1">
             PAYMENTS
           </h2>
@@ -173,7 +212,7 @@
       <!-- Card 1 -->
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg">
-          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="ai.jpg" alt="Request Service">
+          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="t.jpeg" alt="Request Service">
           <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Request Service</h2>
           <p class="leading-relaxed text-base">
             Customers can submit service requests online quickly and conveniently.
@@ -184,7 +223,7 @@
       <!-- Card 2 -->
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg">
-          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="ai.jpg" alt="Track Service">
+          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="r.jpeg" alt="Track Service">
           <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Track Service</h2>
           <p class="leading-relaxed text-base">
             Customers and admins can track the progress of service requests in real-time.
@@ -195,7 +234,7 @@
       <!-- Card 3 -->
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg">
-          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="ai.jpg" alt="Payments">
+          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="pp.jpeg" alt="Payments">
           <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Online Payments</h2>
           <p class="leading-relaxed text-base">
             Secure and fast payment options for all service requests.
@@ -206,7 +245,7 @@
       <!-- Card 4 -->
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg">
-          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="ai.jpg" alt="Admin Panel">
+          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="m.jpeg" alt="Admin Panel">
           <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Service Management</h2>
           <p class="leading-relaxed text-base">
             Admins can manage requests efficiently with a centralized dashboard.
@@ -217,7 +256,7 @@
       <!-- Card 5 -->
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg">
-          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="ai.jpg" alt="Technician">
+          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="tt.jpeg" alt="Technician">
           <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Technician Assignment</h2>
           <p class="leading-relaxed text-base">
             Assign tasks to technicians and track completion status seamlessly.
@@ -228,7 +267,7 @@
       <!-- Card 6 -->
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg">
-          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="ai.jpg" alt="Customer Support">
+          <img class="w-20 h-20 mb-4 mx-auto rounded-full object-cover" src="h.jpeg" alt="Customer Support">
           <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Customer Support</h2>
           <p class="leading-relaxed text-base">
             Get help and resolve issues quickly with our integrated support system.
